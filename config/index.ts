@@ -48,7 +48,7 @@ export default defineConfig<'vite'>(async (merge, { command, mode }) => {
       },
     },
     h5: {
-      publicPath: '/',
+      publicPath: process.env.NODE_ENV === 'production' ? '/cat-action/' : '/',
       staticDirectory: 'static',
 
       miniCssExtractPluginOption: {

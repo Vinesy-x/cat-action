@@ -1,12 +1,17 @@
 import { LevelData } from '../types'
 
+// 导入场景图片
+import level1Bg from '../assets/images/levels/level1.jpg'
+import level2Bg from '../assets/images/levels/level2.jpg'
+import level3Bg from '../assets/images/levels/level3.jpg'
+
 // 关卡数据 - 猫咪位置需要根据实际图片调整
 // 坐标为百分比 (0-100)，radius 为点击判定半径
 export const levels: LevelData[] = [
   {
     levelId: 1,
     name: '温馨客厅',
-    background: '/assets/images/levels/level1.jpg',
+    background: level1Bg,
     difficulty: 'easy',
     hints: 3,
     cats: [
@@ -21,7 +26,7 @@ export const levels: LevelData[] = [
   {
     levelId: 2,
     name: '花园午后',
-    background: '/assets/images/levels/level2.jpg',
+    background: level2Bg,
     difficulty: 'normal',
     hints: 3,
     cats: [
@@ -38,7 +43,7 @@ export const levels: LevelData[] = [
   {
     levelId: 3,
     name: '书房秘密',
-    background: '/assets/images/levels/level3.jpg',
+    background: level3Bg,
     difficulty: 'hard',
     hints: 2,
     cats: [

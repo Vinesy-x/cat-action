@@ -1,3 +1,8 @@
+// 响应式变量
+$screen-sm: 320px;
+$screen-md: 375px;
+$screen-lg: 414px;
+
 .game-scene {
   width: 100%;
   height: 100vh;
@@ -37,6 +42,14 @@
     animation: bounce 0.5s ease;
     z-index: 10;
     pointer-events: none;
+    
+    @media screen and (max-width: $screen-sm) {
+      font-size: 52rpx;
+    }
+    
+    @media screen and (min-width: $screen-lg) {
+      font-size: 72rpx;
+    }
   }
 
   .hint-circle {
@@ -48,6 +61,10 @@
     pointer-events: none;
     z-index: 20;
     box-shadow: 0 0 20rpx rgba(255, 215, 0, 0.5);
+    
+    @media screen and (max-width: $screen-sm) {
+      border-width: 4rpx;
+    }
   }
 
   // 点击反馈
@@ -61,6 +78,12 @@
     animation: tap-ripple 0.4s ease-out forwards;
     pointer-events: none;
     z-index: 15;
+    
+    @media screen and (max-width: $screen-sm) {
+      width: 48rpx;
+      height: 48rpx;
+      border-width: 3rpx;
+    }
   }
 }
 

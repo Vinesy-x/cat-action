@@ -1,8 +1,17 @@
+// 响应式变量
+$screen-sm: 320px;
+$screen-md: 375px;
+$screen-lg: 414px;
+
 .level-card {
   background: #fff;
   border-radius: 24rpx;
   overflow: hidden;
   box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.12);
+
+  @media screen and (max-width: $screen-sm) {
+    border-radius: 20rpx;
+  }
 
   &:active {
     transform: scale(0.98);
@@ -24,10 +33,19 @@
 
   .thumbnail {
     width: 100%;
+    // 响应式高度
     height: 200rpx;
     position: relative;
     background: #e0e0e0;
     overflow: hidden;
+    
+    @media screen and (max-width: $screen-sm) {
+      height: 160rpx;
+    }
+    
+    @media screen and (min-width: $screen-lg) {
+      height: 240rpx;
+    }
   }
 
   .bg-image {
@@ -43,6 +61,10 @@
     justify-content: center;
     font-size: 72rpx;
     background: linear-gradient(135deg, #bbb 0%, #999 100%);
+    
+    @media screen and (max-width: $screen-sm) {
+      font-size: 56rpx;
+    }
   }
 
   .completed-badge {
@@ -60,6 +82,14 @@
     font-size: 28rpx;
     font-weight: bold;
     box-shadow: 0 4rpx 8rpx rgba(0,0,0,0.2);
+    
+    @media screen and (max-width: $screen-sm) {
+      width: 40rpx;
+      height: 40rpx;
+      font-size: 24rpx;
+      top: 12rpx;
+      right: 12rpx;
+    }
   }
 
   .difficulty-badge {
@@ -70,6 +100,13 @@
     border-radius: 16rpx;
     font-size: 22rpx;
     font-weight: 500;
+    
+    @media screen and (max-width: $screen-sm) {
+      padding: 6rpx 12rpx;
+      font-size: 20rpx;
+      top: 12rpx;
+      left: 12rpx;
+    }
     
     &.easy {
       background: #81C784;
@@ -89,6 +126,10 @@
 
   .info {
     padding: 20rpx 24rpx;
+    
+    @media screen and (max-width: $screen-sm) {
+      padding: 16rpx 20rpx;
+    }
   }
 
   .name {
@@ -100,12 +141,21 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    
+    @media screen and (max-width: $screen-sm) {
+      font-size: 26rpx;
+      margin-bottom: 6rpx;
+    }
   }
 
   .cats-count {
     display: block;
     font-size: 26rpx;
     color: #666;
+    
+    @media screen and (max-width: $screen-sm) {
+      font-size: 24rpx;
+    }
   }
 
   .best-time {
@@ -113,5 +163,10 @@
     font-size: 24rpx;
     color: #999;
     margin-top: 8rpx;
+    
+    @media screen and (max-width: $screen-sm) {
+      font-size: 22rpx;
+      margin-top: 6rpx;
+    }
   }
 }

@@ -1,0 +1,36 @@
+// 全局样式
+// 基础重置
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 
+               'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', 
+               Helvetica, Arial, sans-serif;
+  font-size: 28rpx;
+  line-height: 1.5;
+  color: #333;
+  background: #f5f5f5;
+  // 防止文字大小自动调整
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+// 盒模型统一
+view, text, image {
+  box-sizing: border-box;
+}
+
+// 图片默认行为
+image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// 隐藏滚动条（H5）
+::-webkit-scrollbar {
+  display: none;
+}
+
+// 点击高亮去除
+* {
+  -webkit-tap-highlight-color: transparent;
+}

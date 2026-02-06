@@ -1,3 +1,8 @@
+// 响应式变量
+$screen-sm: 320px;
+$screen-md: 375px;
+$screen-lg: 414px;
+
 .game-hud {
   position: fixed;
   top: 0;
@@ -15,6 +20,11 @@
     padding-top: calc(env(safe-area-inset-top) + 24rpx);
     pointer-events: auto;
     background: linear-gradient(to bottom, rgba(0,0,0,0.4), transparent);
+    
+    @media screen and (max-width: $screen-sm) {
+      padding: 20rpx 24rpx;
+      padding-top: calc(env(safe-area-inset-top) + 20rpx);
+    }
   }
 
   .back-btn {
@@ -25,6 +35,12 @@
     color: #333;
     font-weight: 500;
     box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.1);
+    
+    @media screen and (max-width: $screen-sm) {
+      padding: 12rpx 24rpx;
+      font-size: 24rpx;
+      border-radius: 32rpx;
+    }
     
     &:active {
       transform: scale(0.95);
@@ -37,6 +53,15 @@
     font-weight: bold;
     color: #fff;
     text-shadow: 0 4rpx 8rpx rgba(0,0,0,0.3);
+    // 防止文字过长
+    max-width: 40%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    
+    @media screen and (max-width: $screen-sm) {
+      font-size: 30rpx;
+    }
   }
 
   .progress {
@@ -44,12 +69,21 @@
     padding: 16rpx 32rpx;
     border-radius: 40rpx;
     box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.1);
+    
+    @media screen and (max-width: $screen-sm) {
+      padding: 12rpx 24rpx;
+      border-radius: 32rpx;
+    }
   }
 
   .progress-text {
     font-size: 32rpx;
     color: #333;
     font-weight: 600;
+    
+    @media screen and (max-width: $screen-sm) {
+      font-size: 28rpx;
+    }
   }
 
   .bottom-bar {
@@ -62,6 +96,11 @@
     display: flex;
     justify-content: center;
     pointer-events: auto;
+    
+    @media screen and (max-width: $screen-sm) {
+      padding: 24rpx;
+      padding-bottom: calc(env(safe-area-inset-bottom) + 24rpx);
+    }
   }
 
   .hint-btn {
@@ -72,6 +111,12 @@
     padding: 24rpx 48rpx;
     border-radius: 60rpx;
     box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.15);
+    
+    @media screen and (max-width: $screen-sm) {
+      padding: 20rpx 40rpx;
+      gap: 12rpx;
+      border-radius: 48rpx;
+    }
 
     &:active {
       transform: scale(0.95);
@@ -88,11 +133,19 @@
 
   .hint-icon {
     font-size: 48rpx;
+    
+    @media screen and (max-width: $screen-sm) {
+      font-size: 40rpx;
+    }
   }
 
   .hint-count {
     font-size: 32rpx;
     font-weight: bold;
     color: #666;
+    
+    @media screen and (max-width: $screen-sm) {
+      font-size: 28rpx;
+    }
   }
 }

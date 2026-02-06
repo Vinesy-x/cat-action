@@ -4,14 +4,34 @@
   overflow: hidden;
   position: relative;
   background: #1a1a2e;
+  // 防止 iOS 橡皮筋效果
+  overscroll-behavior: none;
+  // 防止选中文字
+  user-select: none;
+  -webkit-user-select: none;
+  // 防止长按弹出菜单
+  -webkit-touch-callout: none;
 }
 
 .loading {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   background: #1a1a2e;
   color: #fff;
   font-size: 32rpx;
+  gap: 24rpx;
+  
+  &::before {
+    content: '🐱';
+    font-size: 80rpx;
+    animation: loading-cat 1s ease-in-out infinite;
+  }
+}
+
+@keyframes loading-cat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
 }

@@ -11,36 +11,45 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    padding-top: calc(env(safe-area-inset-top) + 20px);
+    padding: 24rpx 32rpx;
+    padding-top: calc(env(safe-area-inset-top) + 24rpx);
     pointer-events: auto;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.3), transparent);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), transparent);
   }
 
   .back-btn {
-    background: rgba(255,255,255,0.9);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 14px;
+    background: rgba(255,255,255,0.95);
+    padding: 16rpx 32rpx;
+    border-radius: 40rpx;
+    font-size: 28rpx;
     color: #333;
+    font-weight: 500;
+    box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.1);
+    
+    &:active {
+      transform: scale(0.95);
+      background: rgba(255,255,255,0.85);
+    }
   }
 
   .level-name {
-    font-size: 18px;
+    font-size: 36rpx;
     font-weight: bold;
     color: #fff;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 4rpx 8rpx rgba(0,0,0,0.3);
   }
 
   .progress {
-    background: rgba(255,255,255,0.9);
-    padding: 8px 16px;
-    border-radius: 20px;
+    background: rgba(255,255,255,0.95);
+    padding: 16rpx 32rpx;
+    border-radius: 40rpx;
+    box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.1);
   }
 
   .progress-text {
-    font-size: 16px;
+    font-size: 32rpx;
     color: #333;
+    font-weight: 600;
   }
 
   .bottom-bar {
@@ -48,8 +57,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 20px;
-    padding-bottom: calc(env(safe-area-inset-bottom) + 20px);
+    padding: 32rpx;
+    padding-bottom: calc(env(safe-area-inset-bottom) + 32rpx);
     display: flex;
     justify-content: center;
     pointer-events: auto;
@@ -58,23 +67,31 @@
   .hint-btn {
     display: flex;
     align-items: center;
-    gap: 8px;
-    background: rgba(255,255,255,0.95);
-    padding: 12px 24px;
-    border-radius: 30px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    gap: 16rpx;
+    background: rgba(255,255,255,0.98);
+    padding: 24rpx 48rpx;
+    border-radius: 60rpx;
+    box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.15);
+
+    &:active {
+      transform: scale(0.95);
+    }
 
     &.disabled {
       opacity: 0.5;
+      
+      &:active {
+        transform: none;
+      }
     }
   }
 
   .hint-icon {
-    font-size: 24px;
+    font-size: 48rpx;
   }
 
   .hint-count {
-    font-size: 16px;
+    font-size: 32rpx;
     font-weight: bold;
     color: #666;
   }

@@ -1,33 +1,38 @@
 .level-card {
   background: #fff;
-  border-radius: 16px;
+  border-radius: 24rpx;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.12);
 
   &:active {
     transform: scale(0.98);
+    opacity: 0.9;
   }
 
   &.locked {
     opacity: 0.6;
+    
+    &:active {
+      transform: none;
+      opacity: 0.6;
+    }
   }
 
   &.completed {
-    border: 2px solid #4CAF50;
+    border: 4rpx solid #4CAF50;
   }
 
   .thumbnail {
     width: 100%;
-    height: 120px;
+    height: 200rpx;
     position: relative;
     background: #e0e0e0;
+    overflow: hidden;
   }
 
   .bg-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
   }
 
   .lock-overlay {
@@ -36,48 +41,77 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 40px;
-    background: #ccc;
+    font-size: 72rpx;
+    background: linear-gradient(135deg, #bbb 0%, #999 100%);
   }
 
   .completed-badge {
     position: absolute;
-    top: 8px;
-    right: 8px;
-    width: 28px;
-    height: 28px;
+    top: 16rpx;
+    right: 16rpx;
+    width: 48rpx;
+    height: 48rpx;
     background: #4CAF50;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
-    font-size: 16px;
+    font-size: 28rpx;
     font-weight: bold;
+    box-shadow: 0 4rpx 8rpx rgba(0,0,0,0.2);
+  }
+
+  .difficulty-badge {
+    position: absolute;
+    top: 16rpx;
+    left: 16rpx;
+    padding: 8rpx 16rpx;
+    border-radius: 16rpx;
+    font-size: 22rpx;
+    font-weight: 500;
+    
+    &.easy {
+      background: #81C784;
+      color: #1B5E20;
+    }
+    
+    &.normal {
+      background: #FFB74D;
+      color: #E65100;
+    }
+    
+    &.hard {
+      background: #E57373;
+      color: #B71C1C;
+    }
   }
 
   .info {
-    padding: 12px;
+    padding: 20rpx 24rpx;
   }
 
   .name {
     display: block;
-    font-size: 16px;
+    font-size: 30rpx;
     font-weight: bold;
     color: #333;
-    margin-bottom: 4px;
+    margin-bottom: 8rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .cats-count {
     display: block;
-    font-size: 14px;
+    font-size: 26rpx;
     color: #666;
   }
 
   .best-time {
     display: block;
-    font-size: 12px;
+    font-size: 24rpx;
     color: #999;
-    margin-top: 4px;
+    margin-top: 8rpx;
   }
 }

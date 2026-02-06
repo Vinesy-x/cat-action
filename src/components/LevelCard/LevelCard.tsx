@@ -10,6 +10,12 @@ interface LevelCardProps {
   onClick: () => void
 }
 
+const difficultyLabels = {
+  easy: '简单',
+  normal: '普通',
+  hard: '困难'
+}
+
 export default function LevelCard({
   level,
   isUnlocked,
@@ -30,7 +36,12 @@ export default function LevelCard({
     >
       <View className='thumbnail'>
         {isUnlocked ? (
-          <Image src={level.background} mode='aspectFill' className='bg-image' />
+          <>
+            <Image src={level.background} mode='aspectFill' className='bg-image' />
+            <View className={`difficulty-badge ${level.difficulty}`}>
+              {difficultyLabels[level.difficulty]}
+            </View>
+          </>
         ) : (
           <View className='lock-overlay'>🔒</View>
         )}

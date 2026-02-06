@@ -1,17 +1,24 @@
 import { LevelData } from '../types'
+import Taro from '@tarojs/taro'
 
-// 导入场景图片
-import level1Bg from '../assets/images/levels/level1.jpg'
-import level2Bg from '../assets/images/levels/level2.jpg'
-import level3Bg from '../assets/images/levels/level3.jpg'
+// 根据平台返回正确的图片路径
+const getImagePath = (filename: string): string => {
+  // H5 使用 import，小程序使用相对路径
+  if (process.env.TARO_ENV === 'h5') {
+    // H5 环境下，图片会被打包，这里返回静态路径
+    return `/cat-action/assets/images/levels/${filename}`
+  }
+  // 小程序环境
+  return `/assets/images/levels/${filename}`
+}
 
 // 关卡数据 - 猫咪位置需要根据实际图片调整
-// 坐标为百分比 (0-100)，radius 为点击判定半径
+// 坐标为百分比 (0-100)，radius 为点击判定半径（百分比）
 export const levels: LevelData[] = [
   {
     levelId: 1,
     name: '温馨客厅',
-    background: level1Bg,
+    background: getImagePath('level1.jpg'),
     difficulty: 'easy',
     hints: 3,
     cats: [
@@ -26,7 +33,7 @@ export const levels: LevelData[] = [
   {
     levelId: 2,
     name: '花园午后',
-    background: level2Bg,
+    background: getImagePath('level2.jpg'),
     difficulty: 'normal',
     hints: 3,
     cats: [
@@ -43,7 +50,7 @@ export const levels: LevelData[] = [
   {
     levelId: 3,
     name: '书房秘密',
-    background: level3Bg,
+    background: getImagePath('level3.jpg'),
     difficulty: 'hard',
     hints: 2,
     cats: [

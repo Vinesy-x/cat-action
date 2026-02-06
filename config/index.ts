@@ -24,6 +24,8 @@ export default defineConfig<'vite'>(async (merge, { command, mode }) => {
     },
     copy: {
       patterns: [
+        // 复制图片资源到小程序
+        { from: 'src/assets/', to: 'dist/assets/' },
       ],
       options: {
       }
